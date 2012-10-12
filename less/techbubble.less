@@ -1,0 +1,113 @@
+@bubbleStart: #D2EEF9;
+@bubbleEnd: #96C0FA;
+@background: #FAFAFA;
+
+body {
+	background: @background;
+	margin: 0;
+}
+
+.content_section {
+	position: fixed;
+	background-color: #EFEFEF;
+	border-top: solid 1px #DDD;
+	font-family: sans-serif;
+	width: 90%;
+	padding: 2% 5%;
+	font-weight: 200;
+	text-align: center;	
+}
+
+footer {
+	bottom: 0px;
+	.content_section();
+}
+
+
+#gameover {
+	top: 50%;
+	font-size: 50px;
+	color: red;
+	border-bottom: solid 1px #DDD;
+	.content_section();
+}
+
+.bubbleBackground {
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(bottom, @bubbleStart 0%, @bubbleEnd 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(bottom, @bubbleStart 0%, @bubbleEnd 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(bottom, @bubbleStart 0%, @bubbleEnd 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bubbleStart), color-stop(1, @bubbleEnd));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(bottom, @bubbleStart 0%, @bubbleEnd 100%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to top, @bubbleStart 0%, @bubbleEnd 100%);
+}
+
+.bubbleAnimation {
+	-webkit-transition: width, height 0.5s ease-in-out;
+}
+
+button#bubble {
+	border-radius: 50%;
+	border: solid 2px #EEE;
+	margin: auto auto;
+	cursor: pointer;
+
+	.bubbleBackground();
+	.bubbleAnimation();
+}
+
+button#bubble.finished {
+	background-color: #D84A38;
+	background-image: -moz-linear-gradient(top,#DD4B39,#D14836);
+	background-image: -ms-linear-gradient(top,#DD4B39,#D14836);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#DD4B39),to(#D14836));
+	background-image: -webkit-linear-gradient(top,#DD4B39,#D14836);
+	background-image: -o-linear-gradient(top,#DD4B39,#D14836);
+	background-image: linear-gradient(top,#DD4B39,#D14836);
+}
+
+
+.buttonBackground {
+	color: white;
+	text-shadow: none;
+	background-color: #4D90FE;
+	background-image: -moz-linear-gradient(top,#4D90FE,#4787ED);
+	background-image: -ms-linear-gradient(top,#4D90FE,#4787ED);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#4D90FE),to(#4787ED));
+	background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+	background-image: -o-linear-gradient(top,#4D90FE,#4787ED);
+	background-image: linear-gradient(top,#4D90FE,#4787ED);
+}
+
+
+
+button#new_game {
+	display: block;
+	overflow: visible;
+	margin: auto;
+	padding: 20px 14px;
+	margin-top: 8px;
+	cursor: pointer;
+	outline: 0;
+	border: 0;
+	background-clip: padding;
+	font-family: "Segoe UI",Helvetica,Arial,sans-serif;
+	font-size: 18px;
+	line-height: 14px;
+	min-width: 42px;
+	text-align: center;
+	text-decoration: none;
+	width: 90%;
+
+	.buttonBackground();
+}
